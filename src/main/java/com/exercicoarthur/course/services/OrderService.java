@@ -8,20 +8,20 @@ import org.springframework.stereotype.Service;
 
 import com.exercicoarthur.course.entites.Order;
 import com.exercicoarthur.course.entites.User;
-import com.exercicoarthur.course.repositories.UserRepository;
+import com.exercicoarthur.course.repositories.OrderRepository;
 
 @Service
-public class UserService {
+public class OrderService {
 
     @Autowired
-    private UserRepository repository;
+    private OrderRepository repository;
 
-    public List<User> findAll() {
+    public List<Order> findAll() {
         return repository.findAll();
     }
 
-    public User findById(Long id) {
-        Optional<User> obj = repository.findById(id);
+    public Order findById(Long id) {
+        Optional<Order> obj = repository.findById(id);
         return obj.get();
     }
 }
